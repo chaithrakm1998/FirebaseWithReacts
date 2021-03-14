@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+    
     container: {
         flex: 1,
         alignItems: 'center'
@@ -10,10 +11,9 @@ export default StyleSheet.create({
     },
     logo: {
         flex: 1,
-        height: 120,
-        width: 90,
-        alignSelf: "center",
-        margin: 30
+        height: 10,
+        width: 20,
+        alignSelf: "center"
     },
     input: {
         height: 48,
@@ -27,15 +27,16 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: '#788eec',
-        marginLeft: 30,
-        marginRight: 30,
+        backgroundColor: '#3253a8',
+        marginLeft: 40,
+        marginRight: 40,
         marginTop: 20,
         height: 48,
         borderRadius: 5,
         alignItems: "center",
         justifyContent: 'center'
     },
+    
     buttonTitle: {
         color: 'white',
         fontSize: 16,
@@ -48,10 +49,10 @@ export default StyleSheet.create({
     },
     footerText: {
         fontSize: 16,
-        color: '#2e2e2d'
+        color: 'black'
     },
     footerLink: {
-        color: "#788eec",
+        color: "blue",
         fontWeight: "bold",
         fontSize: 16
     }
