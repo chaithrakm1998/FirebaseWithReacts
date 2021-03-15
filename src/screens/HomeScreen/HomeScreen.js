@@ -16,7 +16,9 @@ export default function HomeScreen({navigation}) {
      navigation.navigate('AboutScreen')
         
       };
-  
+    const onHeaderPress=() => {
+      navigation.navigate('LoginScreen')
+    };
     const addGoalHandler = goalTitle => {
       setCourseGoals(currentGoals => [
         ...currentGoals,
@@ -43,6 +45,7 @@ export default function HomeScreen({navigation}) {
            <Text onPress={onHeaderLinkPress} style={styles.headerLink}>
          About
         </Text>
+        <Text onPress={onHeaderPress} style={styles.header}> SignOut</Text>
 
         <Button title="Add New Goal" onPress={() => setIsAddMode(true)} />
         <GoalInput

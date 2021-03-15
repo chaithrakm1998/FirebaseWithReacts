@@ -26,7 +26,7 @@ export default  StyleSheet.create({
         width: '70%'
       },
       button: {
-        width: '70%'
+        width: '80'
       },
       listItem: {
         padding: 10,
@@ -34,6 +34,16 @@ export default  StyleSheet.create({
         backgroundColor: '#ccc',
         borderColor: 'black',
         borderWidth: 1
+      },
+      headerLink: {
+        padding:20,
+        fontWeight: "bold"
+      },
+      header: {
+        fontWeight: "bold",
+        padding: 13,
+      
       }
+
     
 })

@@ -28,7 +28,7 @@ export default StyleSheet.create({
         paddingLeft: 16
     },
     button: {
-        backgroundColor: 'blue',
+        backgroundColor: '#3253a8',
         marginLeft: 30,
         marginRight: 30,
         marginTop: 20,
@@ -38,7 +38,7 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
     buttonFacebook: {
-        backgroundColor: '#3289a8',
+        backgroundColor: '#3253a8',
         marginLeft: 40,
         marginRight: 40,
         marginTop: 20,

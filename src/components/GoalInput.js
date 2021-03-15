@@ -39,22 +39,25 @@ const styles = StyleSheet.create({
   inputContainer: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: '101%',
+    borderColor:"black"
   },
   input: {
-    width: '80%',
+    width: '100%',
     borderColor: 'black',
     borderWidth: 1,
     padding: 10,
+    borderColor:'black',
     marginBottom: 10
   },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '60%'
+    width: '70%'
   },
   button: {
-    width: '40%'
+    width: '70%'
   }
 });
 
