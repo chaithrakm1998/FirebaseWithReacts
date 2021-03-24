@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Alert, Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Image, Text,  TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './registrationstyles';
-import { auth, signInWithGoogle ,signInWithFacebook} from '../../firebase/config';
+import TextInput from '../../components/Input'
 
-import {firebase} from '../../firebase/config';
+import {auth, firebase, signInWithGoogle, signInWithFacebook} from '../../firebase/config';
 
 export default function RegistrationScreen({navigation}) {
   const [fullName, setFullName] = useState('');
@@ -14,43 +14,36 @@ export default function RegistrationScreen({navigation}) {
 
   const onFooterLinkPress = () => {
     navigation.navigate('LoginScreen');
-    
   };
 
   const onRegisterPress = () => {
     //process of registration
     navigation.navigate('LoginScreen');
-
     if (password !== confirmPassword) {
       alert('passwords dont match, try again!');
       return;
-
-     
-    
-     
+      
     }
-  
     //authentication process - registration
+  
+  
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((response) => {
-        console.log('hiii')
         const uid = response.user.id;
         const data = {
           id: uid,
           email,
           fullName,
         };
-      
 
         const usersRef = firebase.firestore().collection('users');
         usersRef
           .doc(uid)
           .set(data)
           .then(() => {
-            navigation.navigate('HomeScreen', {user: data});
-            console.log('hiii')
+            navigation.navigate('HomeScreen', {user: data}  );
           })
           .catch((error) => {
             alert(error);
@@ -59,6 +52,7 @@ export default function RegistrationScreen({navigation}) {
             alert(error);
           });
       });
+      
   };
 
   return (
@@ -113,16 +107,19 @@ export default function RegistrationScreen({navigation}) {
           onPress={() => onRegisterPress()}>
           <Text style={styles.buttonTitle}>Create account</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
-          style={styles.button}
-          onPress={signInWithGoogle} >
-          <Text style={styles.buttonTitle}>SignIn with Google</Text>
+          style={styles.buttonGoogle}
+          onPress={signInWithGoogle} isGoogleSignIn>
+          <Text style={styles.buttonTitle}>Sign In With Google </Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={signInWithFacebook} >
-          <Text style={styles.buttonTitle}>SignIn with Facebook</Text>
+
+         <TouchableOpacity
+          style={styles.buttonFacebook}
+          onPress={signInWithFacebook} isFacebookSignIn>
+          <Text style={styles.buttonTitle}>Sign In With Facebook</Text>
         </TouchableOpacity>
+
         <View style={styles.footerView}>
           <Text style={styles.footerText}>
             Already got an account?{' '}
@@ -130,9 +127,8 @@ export default function RegistrationScreen({navigation}) {
               Log in
             </Text>
           </Text>
-
-
         </View>
+        
       </KeyboardAwareScrollView>
     </View>
   );

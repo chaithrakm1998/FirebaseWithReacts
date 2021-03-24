@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import { LoginScreen, HomeScreen, RegistrationScreen,AboutScreen } from './src/screens'
+import { LoginScreen, HomeScreen, RegistrationScreen,AboutScreen,ImageScreen,LocationScreen } from './src/screens'
 import {decode, encode} from 'base-64'
 if (!global.btoa) {  global.btoa = encode }
 if (!global.atob) { global.atob = decode }
@@ -29,6 +29,8 @@ export default function App() {
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="AboutScreen" component={AboutScreen} />
             <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
+            <Stack.Screen name="ImageScreen" component={ImageScreen} />
+            <Stack.Screen name="LocationScreen" component={LocationScreen} />
             
           </>
       { /* )}*/}

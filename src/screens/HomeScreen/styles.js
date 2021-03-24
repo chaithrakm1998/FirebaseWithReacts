@@ -43,6 +43,14 @@ export default  StyleSheet.create({
         fontWeight: "bold",
         padding: 13,
       
+      },
+      image: {
+        fontWeight: "bold",
+        padding: 13,
+      },
+      location:{
+        fontWeight: "bold",
+        padding: 13,
       }
 
     

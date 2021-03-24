@@ -5,7 +5,7 @@ export default function AboutScreen() {
 
   return(
      
-      <Text styles={styles.footerLink}>We Make It Easier For You To Remember..Add Your Goals Here....!!!!</Text>
+      <Text styles={styles.footerLink}>Find Location</Text>
       
   );
 }

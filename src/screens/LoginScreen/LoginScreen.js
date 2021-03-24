@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import {Image, Text, TextInput, TouchableOpacity, View,Alert} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import styles from './loginstyles';
-
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-
+import TextInput from '../../components/Input'
 
 export default function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
@@ -13,34 +10,33 @@ export default function LoginScreen({navigation}) {
 
   //functions
 
-
-
   const onFooterLinkPress = () => {
-  navigation.navigate('RegistrationScreen');
-  
- };
+    navigation.navigate('RegistrationScreen');
+  };
 
   const onLoginPress = () => {
-  
-   if(email=='' ||  password=='') {
+    if(email=='' ||  password=='') {
 
-    alert('Please enter all the values');
+      alert('Please enter all the values');
+    }
+  else{
+    navigation.navigate('HomeScreen');
   }
-else{
-  navigation.navigate('HomeScreen');
-}
- };
+  };
 
   //html render
 
   return (
-    
-      <View style={styles.container}>
+    <View style={styles.container}>
       <KeyboardAwareScrollView
         style={{flex: 1, width: '100%'}}
         keyboardShouldPersistTaps="always">
-        <Image styles={styles.logo} source={require('../../../assets/splash.png')} />
 
+        <View style={styles.logo}>
+        <Image source = {require('../../../assets/splash.png')}
+        style={{width: '90%', resizeMode: 'contain', margin: 30}}
+        />
+      </View>
         <TextInput
           style={styles.input}
           placeholder="E-mail"
